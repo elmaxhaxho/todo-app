@@ -4,10 +4,9 @@ const authMiddleware = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-// Enforce auth check on all routes below
 router.use(authMiddleware);
 
-// GET: Fetch user's TODOs
+
 router.get('/', async (req, res) => {
   try {
     const todos = await Todo.find({ user: req.userId });
@@ -17,7 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST: Create TODO
+
 router.post('/', async (req, res) => {
   try {
     const { title, description } = req.body;
@@ -29,7 +28,7 @@ router.post('/', async (req, res) => {
     const newTodo = new Todo({
       title: title.trim(),
       description: description || '',
-      user: req.userId // Attached from token
+      user: req.userId 
     });
 
     await newTodo.save();
@@ -39,17 +38,17 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PATCH: Update TODO
+
 router.patch('/:id', async (req, res) => {
   try {
     const todo = await Todo.findOneAndUpdate(
-      { _id: req.params.id, user: req.userId }, // Verifies ownership
+      { _id: req.params.id, user: req.userId }, 
       req.body,
       { new: true }
     );
 
     if (!todo) {
-      return res.status(404).json({ message: 'TODO not found or unauthorized.' });
+      return res.status(404).json({ message: 'TODO not found.' });
     }
 
     res.json(todo);
@@ -58,7 +57,9 @@ router.patch('/:id', async (req, res) => {
   }
 });
 
-// DELETE: Delete TODO
+
+
+
 router.delete('/:id', async (req, res) => {
   try {
     const todo = await Todo.findOneAndDelete({ _id: req.params.id, user: req.userId });
@@ -73,4 +74,7 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+
 module.exports = router;
+
+

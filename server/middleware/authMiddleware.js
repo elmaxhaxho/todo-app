@@ -1,21 +1,18 @@
 const jwt = require('jsonwebtoken');
 
-module.exports = function (req, res, next) {
+module.exports = (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'No token provided.' });
+    }
 
-  const authHeader = req.header('Authorization');
-  const token = authHeader && authHeader.split(' ')[1]; 
+    const token = authHeader.split(' ')[1];
 
-  if (!token) {
-    return res.status(401).json({ message: 'No token provided. Authorization denied.' });
-  }
-
-  try {
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    req.userId = decoded.userId;
-    next();
-  } catch (err) {
-    res.status(403).json({ message: 'Invalid or expired token.' });
-  }
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'mysecretkey123');
+        req.userId = decoded.userId; // Must match req.userId in your todoRoutes
+        next();
+    } catch (err) {
+        return res.status(401).json({ message: 'Invalid token.' });
+    }
 };

@@ -1,11 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
+    <header class="header">
+
+        <div class="logo">
+            TODO
+        </div>
+
+        <div class="search-container">
+            <input
+                type="text"
+                class="search-bar"
+                placeholder="Search for task..."
+                id="search-input"
+            >
+        </div>
+
+        <div class="profile">
+            <div class="profile-picture">
+                <img src="profile.jpg" alt="Profile picture">
+            </div>
+
+            <span class="username">Username</span>
+        </div>
+
+    </header>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+
+            <nav class="navigation">
+
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon">⌂</span>
+                    <span>Home</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">✓</span>
+                    <span>Completed</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">○</span>
+                    <span>Pending</span>
+                </a>
+
+            </nav>
+
+            <a href="#" class="nav-item logout">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+
+        </aside>
+
+<main class="main-content">
+
+    <div class="content-header">
+        <div>
+            <h1 id="page-title">All Tasks</h1>
+            <p>Keep track of everything you need to do.</p>
+        </div>
+    </div>
+
+
+    <form class="add-task-form" style="margin-bottom: 2rem; display: flex; gap: 10px; flex-wrap: wrap;">
+        <input type="text" id="task-title" placeholder="Task Title..." required style="padding: 10px; flex: 1; min-width: 200px;">
+        <input type="text" id="task-desc" placeholder="Task Description (optional)..." style="padding: 10px; flex: 2; min-width: 200px;">
+        <button type="submit" class="add-task">+ Add Task</button>
+    </form>
+
+    <section class="tasks"></section>
+
+</main>
+    </div>
+
+    <script src="js/js.js"></script>
 </body>
 </html>
