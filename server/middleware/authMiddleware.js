@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET || 'mysecretkey123');
-        req.userId = decoded.userId; // Must match req.userId in your todoRoutes
+        req.userId = decoded.userId; 
         next();
     } catch (err) {
         return res.status(401).json({ message: 'Invalid token.' });
