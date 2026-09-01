@@ -246,6 +246,61 @@ body {
     color: white;
 }
 
+
+.add-task-form {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    margin-bottom: 2rem;
+    background: #f7f7fc;
+    border: 1px solid #e5e4f2;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.add-task-form input {
+    padding: 13px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    background: white;
+}
+
+#task-title {
+    flex: 1;
+    min-width: 180px;
+}
+
+#task-desc {
+    flex: 2;
+    min-width: 200px;
+}
+
+.add-task-form input:focus {
+    border-color: #7E5AFE;
+    box-shadow: 0 0 0 3px rgba(126, 90, 254, 0.12);
+}
+
+.add-btn {
+    padding: 0 20px;
+    border: none;
+    border-radius: 10px;
+    background: #7E5AFE;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+
+
 @media (max-width: 800px) {
 
     .logo {

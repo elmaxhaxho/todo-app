@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        
+
 
 
         function renderTasks() {
@@ -268,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             logout();
         });
+
 
         function logout() {
             localStorage.removeItem('token');
