@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
 
-
-
-
     if (path.includes('signup.html')) {
         const signupForm = document.querySelector('.signup-form');
         signupForm?.addEventListener('submit', async (event) => {
@@ -41,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
     if (path.includes('login.html')) {
         const loginForm = document.querySelector('.login-form');
         loginForm?.addEventListener('submit', async (event) => {
@@ -71,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
     if (path.includes('index.html') || path === '/' || path.endsWith('/')) {
         const token = localStorage.getItem('token');
         if (!token) {
@@ -81,13 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentFilter = 'all'; 
         let searchQuery = '';
+        let softDeletedIds = [];
         let allTasks = [];
 
 
 
 
 
-        // users name on top
         const usernameSpan = document.querySelector('.username');
         const savedUsername = localStorage.getItem('username');
         if (usernameSpan && savedUsername) usernameSpan.textContent = savedUsername;
@@ -112,21 +109,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+        
 
-        // rendering tasks from search and sidebar
+
         function renderTasks() {
             const container = document.querySelector('.tasks');
             if (!container) return;
 
             const filtered = allTasks.filter(task => {
-                // side
+                if (softDeletedIds.includes(task._id)) return false;
+
                 const matchesCategory = 
                     currentFilter === 'all' ||
                     (currentFilter === 'completed' && task.completed) ||
                     (currentFilter === 'pending' && !task.completed);
 
-               
-                // search filter
                 const query = searchQuery.toLowerCase().trim();
                 const matchesSearch = 
                     task.title.toLowerCase().includes(query) || 
@@ -160,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            // status toggle
+
             document.querySelectorAll('.task-status').forEach(button => {
                 button.addEventListener('click', async (e) => {
                     const id = e.target.getAttribute('data-id');
@@ -185,24 +182,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            // delete btn
             document.querySelectorAll('.delete-btn').forEach(button => {
-                button.addEventListener('click', async (e) => {
+                button.addEventListener('click', (e) => {
                     const id = e.target.getAttribute('data-id');
-
-                    try {
-                        const response = await fetch(`/api/todos/${id}`, {
-                            method: 'DELETE',
-                            headers: { 'Authorization': `Bearer ${token}` }
-                        });
-                        if (response.ok) {
-                            loadTasks();
-                        } else {
-                            alert('Failed to delete task.');
-                        }
-                    } catch (err) {
-                        console.error('Error deleting task:', err);
-                    }
+                    softDeletedIds.push(id);
+                    renderTasks();
                 });
             });
         }
@@ -210,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // searching
         const searchInput = document.getElementById('search-input');
         searchInput?.addEventListener('input', (e) => {
             searchQuery = e.target.value;
@@ -220,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // form handler
         const addTaskForm = document.querySelector('.add-task-form');
         addTaskForm?.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -257,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // category in sidebar
         const navItems = document.querySelectorAll('.navigation .nav-item');
         navItems.forEach(item => {
             item.addEventListener('click', (e) => {
@@ -282,7 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // logout
         const logoutBtn = document.querySelector('.logout');
         logoutBtn?.addEventListener('click', (e) => {
             e.preventDefault();
