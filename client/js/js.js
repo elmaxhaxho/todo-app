@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentFilter = 'all'; 
         let searchQuery = '';
-        let softDeletedIds = [];
+        let softDeletedIds = JSON.parse(localStorage.getItem('softDeletedIds')) || [];
         let allTasks = [];
 
 
@@ -182,14 +182,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            document.querySelectorAll('.delete-btn').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const id = e.target.getAttribute('data-id');
-                    softDeletedIds.push(id);
-                    renderTasks();
+                document.querySelectorAll('.delete-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-id');
+                        
+                        if (!softDeletedIds.includes(id)) {
+                            softDeletedIds.push(id);
+                            localStorage.setItem('softDeletedIds', JSON.stringify(softDeletedIds));
+                        }
+                        
+                        renderTasks();
+                    });
                 });
-            });
-        }
+            }
 
 
 
