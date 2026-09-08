@@ -1,97 +1,520 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>TODO App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
+    <div class="logo">TODO</div>
 
-        <div class="logo">
-            TODO
-        </div>
+<div class="search-container">
+    <input type="text" class="search-bar" placeholder="Search projects or tasks..." id="search-input">
+</div>
 
-        <div class="search-container">
-            <input
-                type="text"
-                class="search-bar"
-                placeholder="Search for task..."
-                id="search-input"
-            >
-        </div>
+<div class="profile">
+    <div class="profile-picture">
+        <img src="profile.jpg" alt="Profile picture">
+    </div>
+    <span class="username">Username</span>
+</div>
 
-        <div class="profile">
-            <div class="profile-picture">
-                <img src="profile.jpg" alt="Profile picture">
-            </div>
+</header>
 
-            <span class="username">Username</span>
-        </div>
+<div class="layout">
 
-    </header>
+<aside class="sidebar">
 
-    <div class="layout">
+    <nav class="navigation">
 
-        <aside class="sidebar">
+        <a href="#" class="nav-item active" id="nav-dashboard">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+        </a>
 
-            <nav class="navigation">
+        <a href="#" class="nav-item" id="nav-projects">
+            <span class="nav-icon">☰</span>
+            <span>Projects</span>
+        </a>
 
-                <a href="#" class="nav-item active">
-                    <span class="nav-icon">⌂</span>
-                    <span>Home</span>
-                </a>
+        <a href="#" class="nav-item admin-only" id="nav-clients">
+            <span class="nav-icon">♙</span>
+            <span>Clients</span>
+        </a>
 
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">✓</span>
-                    <span>Completed</span>
-                </a>
+        <a href="#" class="nav-item admin-only" id="nav-users">
+            <span class="nav-icon">♙</span>
+            <span>Users</span>
+        </a>
 
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">○</span>
-                    <span>Pending</span>
-                </a>
+        <a href="#" class="nav-item" id="nav-archive">
+            <span class="nav-icon">✉</span>
+            <span>Archive</span>
+        </a>
 
-            </nav>
+    </nav>
 
-            <a href="#" class="nav-item logout">
-                <span class="nav-icon">↪</span>
-                <span>Logout</span>
-            </a>
+    <a href="#" class="nav-item logout">
+        <span class="nav-icon">↪</span>
+        <span>Logout</span>
+    </a>
 
-        </aside>
+</aside>
 
 <main class="main-content">
 
-    <div class="content-header">
-        <div>
-            <h1 id="page-title">All Tasks</h1>
-            <p>Keep track of everything you need to do.</p>
+    <section id="dashboard-section" class="page-section">
+
+        <div class="content-header">
+
+            <div>
+                <h1 id="dashboard-title">Dashboard</h1>
+                <p id="dashboard-subtitle">Overview of your work.</p>
+            </div>
+
         </div>
-    </div>
+
+        <div id="dashboard-cards" class="dashboard-cards"></div>
+
+    </section>
 
 
-<form class="add-task-form">
-    <input type="text" id="task-title" placeholder="Task title..." required>
-    <input type="text" id="task-desc" placeholder="Task description (optional)...">
+    <section id="projects-section" class="page-section" style="display:none;">
 
-    <button type="submit" class="add-btn">+ Add Task</button>
-</form>
+        <div class="content-header">
 
-    <section class="tasks"></section>
+            <div>
+                <h1>Projects</h1>
+                <p>Manage your projects, tasks, and team members.</p>
+            </div>
+
+            <button class="new-project-btn admin-only" id="open-project-modal">
+                + New Project
+            </button>
+
+        </div>
+
+        <section class="projects" id="projects-container"></section>
+
+    </section>
+
+
+    <section id="archive-section" class="page-section" style="display:none;">
+
+        <div class="content-header">
+
+            <div>
+                <h1>Archive</h1>
+                <p>View your archived projects and tasks.</p>
+            </div>
+
+        </div>
+
+        <div class="archive-container">
+
+            <h2>Archived Projects</h2>
+
+            <div class="projects" id="archived-projects-container"></div>
+
+            <h2 style="margin-top:30px;">
+                Archived Tasks
+            </h2>
+
+            <div class="task-list" id="archived-tasks-container"></div>
+
+        </div>
+
+    </section>
+
+
+    <section id="clients-section" class="page-section admin-only" style="display:none;">
+
+        <div class="content-header">
+
+            <div>
+                <h1>Clients</h1>
+                <p>Manage your client information.</p>
+            </div>
+
+            <button class="new-project-btn" id="open-client-modal">
+                + Add Client
+            </button>
+
+        </div>
+
+        <div id="clients-list-container" class="admin-list"></div>
+
+    </section>
+
+
+    <section id="users-section" class="page-section admin-only" style="display:none;">
+
+        <div class="content-header">
+
+            <div>
+                <h1>Users</h1>
+                <p>Create users and manage their roles.</p>
+            </div>
+
+            <button class="new-project-btn" id="open-user-modal">
+                + Add User
+            </button>
+
+        </div>
+
+        <div id="users-list-container" class="admin-list"></div>
+
+    </section>
 
 </main>
+
+
+</div>
+
+<div class="modal" id="project-modal">
+
+<div class="modal-content">
+
+    <h3 id="project-modal-title">
+        Create New Project
+    </h3>
+
+    <div class="input-group">
+
+        <label for="project-title-input">
+            Project Title
+        </label>
+
+        <input
+            type="text"
+            id="project-title-input"
+            placeholder="Project Title..."
+            required
+        >
+
     </div>
 
-    <script src="js/js.js"></script>
+    <div class="input-group">
+
+        <label for="project-desc-input">
+            Description
+        </label>
+
+        <textarea
+            id="project-desc-input"
+            placeholder="Enter project description..."
+        ></textarea>
+
+    </div>
+
+    <div class="input-group">
+
+        <label for="project-members-input">
+            Employees
+        </label>
+
+        <select
+            id="project-members-input"
+            class="multi-select"
+            multiple
+        ></select>
+
+
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button
+            class="btn-secondary"
+            id="close-project-modal"
+            type="button"
+        >
+            Cancel
+        </button>
+
+        <button
+            class="btn-primary"
+            id="save-project-btn"
+            type="button"
+        >
+            Create Project
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<div class="modal" id="task-modal">
+
+<div class="modal-content">
+
+    <h3>
+        Add New Task
+    </h3>
+
+    <div class="input-group">
+
+        <label for="task-title-input">
+            Title
+        </label>
+
+        <input
+            type="text"
+            id="task-title-input"
+            placeholder="Enter task title"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label for="task-desc-input">
+            Description
+        </label>
+
+        <textarea
+            id="task-desc-input"
+            placeholder="Enter task description"
+        ></textarea>
+
+    </div>
+
+    <div class="input-group">
+
+        <label for="task-assignee-input">
+            Assign to
+        </label>
+
+        <select id="task-assignee-input"></select>
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button
+            id="close-task-modal"
+            class="btn-secondary"
+            type="button"
+        >
+            Cancel
+        </button>
+
+        <button
+            id="save-task-btn"
+            class="btn-primary"
+            type="button"
+        >
+            Save Task
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<div class="modal" id="client-modal">
+
+<div class="modal-content">
+
+    <h3 id="client-modal-title">
+        Add Client
+    </h3>
+
+    <div class="input-group">
+
+        <label>Name</label>
+
+        <input
+            id="client-name-input"
+            type="text"
+            placeholder="Client name"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Company</label>
+
+        <input
+            id="client-company-input"
+            type="text"
+            placeholder="Company"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Email</label>
+
+        <input
+            id="client-email-input"
+            type="email"
+            placeholder="Email"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Phone</label>
+
+        <input
+            id="client-phone-input"
+            type="text"
+            placeholder="Phone"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Address</label>
+
+        <input
+            id="client-address-input"
+            type="text"
+            placeholder="Address"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Notes</label>
+
+        <textarea
+            id="client-notes-input"
+            placeholder="Notes"
+        ></textarea>
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button
+            class="btn-secondary"
+            id="close-client-modal"
+            type="button"
+        >
+            Cancel
+        </button>
+
+        <button
+            class="btn-primary"
+            id="save-client-btn"
+            type="button"
+        >
+            Save Client
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<div class="modal" id="user-modal">
+
+
+<div class="modal-content">
+
+    <h3>
+        Create User
+    </h3>
+
+    <div class="input-group">
+
+        <label>Name</label>
+
+        <input
+            id="user-name-input"
+            type="text"
+            placeholder="Name"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Email</label>
+
+        <input
+            id="user-email-input"
+            type="email"
+            placeholder="Email"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Password</label>
+
+        <input
+            id="user-password-input"
+            type="password"
+            placeholder="At least 6 characters"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Role</label>
+
+        <select id="user-role-input">
+
+            <option value="employee">
+                Employee
+            </option>
+
+            <option value="admin">
+                Admin
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="modal-actions">
+
+        <button
+            class="btn-secondary"
+            id="close-user-modal"
+            type="button"
+        >
+            Cancel
+        </button>
+
+        <button
+            class="btn-primary"
+            id="save-user-btn"
+            type="button"
+        >
+            Create User
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+<script src="js/js.js"></script>
+
 </body>
 </html>
-
