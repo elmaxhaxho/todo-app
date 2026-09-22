@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/elmax/Desktop/TODO/client/app/login/page.jsx"],"sourcesContent":["import LoginForm from '@/components/LoginForm';\r\n\r\nexport const metadata = {\r\n  title: 'Login - TODO',\r\n};\r\n\r\nexport default function LoginPage() {\r\n  return <LoginForm />;\r\n}"],"names":["metadata","title","LoginPage","LoginForm"],"mappings":";;;;;;;;;;;;;;AAEO,MAAMA,WAAW;IACtBC,OAAO;AACT;AAEe,SAASC;IACtB,qBAAO,8OAACC;;;;;AACV"}}]
+}

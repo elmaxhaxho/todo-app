@@ -8,13 +8,6 @@ const adminMiddleware = require('../middleware/adminMiddleware');
 
 const router = express.Router();
 
-async function getProjectForMember(projectId, userId, includeArchived = false) {
-    if (!mongoose.isValidObjectId(projectId)) return null;
-    const query = { _id: projectId, members: userId, deleted: { $ne: true } };
-    if (!includeArchived) query.archived = false;
-    return Project.findOne(query);
-}
-
 async function buildProjects(filter, includeArchived = false) {
     const projects = await Project.find(filter)
         .populate('members', 'name email role')
@@ -36,11 +29,12 @@ async function buildProjects(filter, includeArchived = false) {
     for (const task of tasks) {
         const key = task.projectId.toString();
         if (!tasksByProject.has(key)) tasksByProject.set(key, []);
-        tasksByProject.get(key).push(task);
+        tasksByProject.get(key).push({ ...task, id: task._id });
     }
 
     return projects.map(project => ({
         ...project,
+        id: project._id,
         tasks: tasksByProject.get(project._id.toString()) || []
     }));
 }
@@ -80,20 +74,19 @@ router.post('/', authMiddleware, adminMiddleware, async (req, res) => {
             role: 'employee'
         }).select('_id');
 
-        const validMemberIds = employees.map(user => user._id);
-
         const project = await Project.create({
             title,
             description,
             owner: req.user._id,
-            members: validMemberIds,
+            members: employees.map(u => u._id),
             tasks: []
         });
 
         const populatedProject = await Project.findById(project._id)
-            .populate('members', 'name email role');
+            .populate('members', 'name email role')
+            .lean();
 
-        res.status(201).json({ ...populatedProject.toObject(), tasks: [] });
+        res.status(201).json({ ...populatedProject, id: populatedProject._id, tasks: [] });
     } catch (error) {
         console.error('Create project error:', error);
         res.status(500).json({ message: 'Server error creating project.' });
@@ -118,37 +111,14 @@ router.put('/:projectId', authMiddleware, adminMiddleware, async (req, res) => {
 
         project.title = title;
         project.description = description;
-        project.members = employees.map(user => user._id);
+        project.members = employees.map(u => u._id);
         await project.save();
 
-        res.json(await Project.findById(project._id).populate('members', 'name email role'));
+        const updated = await Project.findById(project._id).populate('members', 'name email role').lean();
+        res.json({ ...updated, id: updated._id });
     } catch (error) {
         console.error('Update project error:', error);
         res.status(500).json({ message: 'Server error updating project.' });
-    }
-});
-
-router.post('/:projectId/members', authMiddleware, adminMiddleware, async (req, res) => {
-    try {
-        const email = String(req.body.email || '').trim().toLowerCase();
-        if (!email) return res.status(400).json({ message: 'Member email is required.' });
-
-        const project = await Project.findOne({ _id: req.params.projectId, deleted: { $ne: true } });
-        if (!project) return res.status(404).json({ message: 'Project not found.' });
-
-        const userToAdd = await User.findOne({ email, role: 'employee' });
-        if (!userToAdd) return res.status(404).json({ message: 'No employee account exists with this email.' });
-
-        if (project.members.some(memberId => memberId.toString() === userToAdd._id.toString())) {
-            return res.status(409).json({ message: 'This user is already a member of the project.' });
-        }
-
-        project.members.push(userToAdd._id);
-        await project.save();
-        res.json({ message: 'Member added successfully.', user: { id: userToAdd._id, name: userToAdd.name, email: userToAdd.email } });
-    } catch (error) {
-        console.error('Add member error:', error);
-        res.status(500).json({ message: 'Server error adding member.' });
     }
 });
 
