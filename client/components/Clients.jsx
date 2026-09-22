@@ -141,19 +141,13 @@ export default function Clients() {
         );
       }
 
-      /*
-        Remove it immediately from the current display.
-      */
       setClients((currentClients) =>
         currentClients.filter(
           (client) => client._id !== id
         )
       );
 
-      /*
-        Refresh from the backend to make sure
-        the UI matches the database.
-      */
+
       await fetchClients();
 
     } catch (err) {

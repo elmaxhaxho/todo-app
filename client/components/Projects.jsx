@@ -9,7 +9,6 @@ export default function Projects({ isAdmin, searchTerm }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  // Modal State
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const [editingProject, setEditingProject] = useState(null);
   const [projectTitle, setProjectTitle] = useState('');
@@ -339,7 +338,7 @@ export default function Projects({ isAdmin, searchTerm }) {
     projectMatchesSearch(p, term)
   );
 
-  // Toggle employee selection
+
   const toggleMember = (employeeId) => {
     setSelectedMembers((current) => {
       if (current.includes(employeeId)) {

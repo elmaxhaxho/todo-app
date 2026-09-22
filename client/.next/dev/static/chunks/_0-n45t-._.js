@@ -216,9 +216,7 @@ function Archive({ isAdmin }) {
             alert(err.message);
         }
     };
-    /*
-    Restore task
-  */ const handleRestoreTask = async (id)=>{
+    const handleRestoreTask = async (id)=>{
         try {
             const token = localStorage.getItem('token');
             const apiUrl = ("TURBOPACK compile-time value", "http://localhost:5000") || '';
@@ -246,7 +244,7 @@ function Archive({ isAdmin }) {
             children: error
         }, void 0, false, {
             fileName: "[project]/components/Archive.jsx",
-            lineNumber: 135,
+            lineNumber: 131,
             columnNumber: 7
         }, this);
     }
@@ -261,25 +259,25 @@ function Archive({ isAdmin }) {
                             children: "Archive"
                         }, void 0, false, {
                             fileName: "[project]/components/Archive.jsx",
-                            lineNumber: 147,
+                            lineNumber: 143,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             children: "View your archived projects and tasks."
                         }, void 0, false, {
                             fileName: "[project]/components/Archive.jsx",
-                            lineNumber: 148,
+                            lineNumber: 144,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Archive.jsx",
-                    lineNumber: 146,
+                    lineNumber: 142,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Archive.jsx",
-                lineNumber: 145,
+                lineNumber: 141,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -289,7 +287,7 @@ function Archive({ isAdmin }) {
                         children: "Archived Projects"
                     }, void 0, false, {
                         fileName: "[project]/components/Archive.jsx",
-                        lineNumber: 159,
+                        lineNumber: 155,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -303,7 +301,7 @@ function Archive({ isAdmin }) {
                             children: "No archived projects."
                         }, void 0, false, {
                             fileName: "[project]/components/Archive.jsx",
-                            lineNumber: 167,
+                            lineNumber: 163,
                             columnNumber: 13
                         }, this) : archivedProjects.map((project)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "project-board",
@@ -324,7 +322,7 @@ function Archive({ isAdmin }) {
                                                     children: project.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Archive.jsx",
-                                                    lineNumber: 193,
+                                                    lineNumber: 189,
                                                     columnNumber: 21
                                                 }, this),
                                                 project.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -336,7 +334,7 @@ function Archive({ isAdmin }) {
                                                     children: project.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Archive.jsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 201,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -351,13 +349,13 @@ function Archive({ isAdmin }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/Archive.jsx",
-                                                    lineNumber: 217,
+                                                    lineNumber: 213,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/Archive.jsx",
-                                            lineNumber: 191,
+                                            lineNumber: 187,
                                             columnNumber: 19
                                         }, this),
                                         isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -368,28 +366,28 @@ function Archive({ isAdmin }) {
                                                 children: "Restore"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Archive.jsx",
-                                                lineNumber: 234,
+                                                lineNumber: 230,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/Archive.jsx",
-                                            lineNumber: 232,
+                                            lineNumber: 228,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Archive.jsx",
-                                    lineNumber: 186,
+                                    lineNumber: 182,
                                     columnNumber: 17
                                 }, this)
                             }, project._id, false, {
                                 fileName: "[project]/components/Archive.jsx",
-                                lineNumber: 181,
+                                lineNumber: 177,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/Archive.jsx",
-                        lineNumber: 163,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -399,7 +397,7 @@ function Archive({ isAdmin }) {
                         children: "Archived Tasks"
                     }, void 0, false, {
                         fileName: "[project]/components/Archive.jsx",
-                        lineNumber: 260,
+                        lineNumber: 256,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -413,7 +411,7 @@ function Archive({ isAdmin }) {
                             children: "No archived tasks."
                         }, void 0, false, {
                             fileName: "[project]/components/Archive.jsx",
-                            lineNumber: 268,
+                            lineNumber: 264,
                             columnNumber: 13
                         }, this) : archivedTasks.map((task)=>{
                             const projectTitle = task.projectId?.title || task.projectTitle || 'Unknown project';
@@ -436,7 +434,7 @@ function Archive({ isAdmin }) {
                                                     children: task.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Archive.jsx",
-                                                    lineNumber: 301,
+                                                    lineNumber: 297,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -451,7 +449,7 @@ function Archive({ isAdmin }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/Archive.jsx",
-                                                    lineNumber: 312,
+                                                    lineNumber: 308,
                                                     columnNumber: 23
                                                 }, this),
                                                 task.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -463,7 +461,7 @@ function Archive({ isAdmin }) {
                                                     children: task.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Archive.jsx",
-                                                    lineNumber: 325,
+                                                    lineNumber: 321,
                                                     columnNumber: 25
                                                 }, this),
                                                 task.label && task.label !== 'General' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -478,7 +476,7 @@ function Archive({ isAdmin }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/Archive.jsx",
-                                                    lineNumber: 341,
+                                                    lineNumber: 337,
                                                     columnNumber: 25
                                                 }, this),
                                                 task.assignedTo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -494,13 +492,13 @@ function Archive({ isAdmin }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/Archive.jsx",
-                                                    lineNumber: 356,
+                                                    lineNumber: 352,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/Archive.jsx",
-                                            lineNumber: 299,
+                                            lineNumber: 295,
                                             columnNumber: 21
                                         }, this),
                                         isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -511,41 +509,41 @@ function Archive({ isAdmin }) {
                                                 children: "Restore"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Archive.jsx",
-                                                lineNumber: 377,
+                                                lineNumber: 373,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/Archive.jsx",
-                                            lineNumber: 375,
+                                            lineNumber: 371,
                                             columnNumber: 23
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Archive.jsx",
-                                    lineNumber: 294,
+                                    lineNumber: 290,
                                     columnNumber: 19
                                 }, this)
                             }, task._id, false, {
                                 fileName: "[project]/components/Archive.jsx",
-                                lineNumber: 289,
+                                lineNumber: 285,
                                 columnNumber: 17
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/components/Archive.jsx",
-                        lineNumber: 264,
+                        lineNumber: 260,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Archive.jsx",
-                lineNumber: 155,
+                lineNumber: 151,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Archive.jsx",
-        lineNumber: 143,
+        lineNumber: 139,
         columnNumber: 5
     }, this);
 }
@@ -666,13 +664,8 @@ function Clients() {
                 const data = await res.json().catch(()=>({}));
                 throw new Error(data.message || 'Failed to delete client');
             }
-            /*
-        Remove it immediately from the current display.
-      */ setClients((currentClients)=>currentClients.filter((client)=>client._id !== id));
-            /*
-        Refresh from the backend to make sure
-        the UI matches the database.
-      */ await fetchClients();
+            setClients((currentClients)=>currentClients.filter((client)=>client._id !== id));
+            await fetchClients();
         } catch (err) {
             alert(err.message);
         }
@@ -689,20 +682,20 @@ function Clients() {
                                 children: "Clients"
                             }, void 0, false, {
                                 fileName: "[project]/components/Clients.jsx",
-                                lineNumber: 171,
+                                lineNumber: 165,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Manage your client information."
                             }, void 0, false, {
                                 fileName: "[project]/components/Clients.jsx",
-                                lineNumber: 173,
+                                lineNumber: 167,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Clients.jsx",
-                        lineNumber: 170,
+                        lineNumber: 164,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -711,13 +704,13 @@ function Clients() {
                         children: "+ Add Client"
                     }, void 0, false, {
                         fileName: "[project]/components/Clients.jsx",
-                        lineNumber: 178,
+                        lineNumber: 172,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Clients.jsx",
-                lineNumber: 168,
+                lineNumber: 162,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -729,7 +722,7 @@ function Clients() {
                     children: error
                 }, void 0, false, {
                     fileName: "[project]/components/Clients.jsx",
-                    lineNumber: 192,
+                    lineNumber: 186,
                     columnNumber: 11
                 }, this) : !clients.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     style: {
@@ -738,7 +731,7 @@ function Clients() {
                     children: "No clients yet."
                 }, void 0, false, {
                     fileName: "[project]/components/Clients.jsx",
-                    lineNumber: 198,
+                    lineNumber: 192,
                     columnNumber: 11
                 }, this) : clients.map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "admin-card",
@@ -749,14 +742,14 @@ function Clients() {
                                         children: c.name
                                     }, void 0, false, {
                                         fileName: "[project]/components/Clients.jsx",
-                                        lineNumber: 213,
+                                        lineNumber: 207,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: c.company || ''
                                     }, void 0, false, {
                                         fileName: "[project]/components/Clients.jsx",
-                                        lineNumber: 217,
+                                        lineNumber: 211,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -767,27 +760,27 @@ function Clients() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Clients.jsx",
-                                        lineNumber: 221,
+                                        lineNumber: 215,
                                         columnNumber: 17
                                     }, this),
                                     c.address && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: c.address
                                     }, void 0, false, {
                                         fileName: "[project]/components/Clients.jsx",
-                                        lineNumber: 227,
+                                        lineNumber: 221,
                                         columnNumber: 19
                                     }, this),
                                     c.notes && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: c.notes
                                     }, void 0, false, {
                                         fileName: "[project]/components/Clients.jsx",
-                                        lineNumber: 233,
+                                        lineNumber: 227,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Clients.jsx",
-                                lineNumber: 211,
+                                lineNumber: 205,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -799,7 +792,7 @@ function Clients() {
                                         children: "Edit"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Clients.jsx",
-                                        lineNumber: 243,
+                                        lineNumber: 237,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -808,24 +801,24 @@ function Clients() {
                                         children: "Delete"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Clients.jsx",
-                                        lineNumber: 250,
+                                        lineNumber: 244,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Clients.jsx",
-                                lineNumber: 241,
+                                lineNumber: 235,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, c._id, true, {
                         fileName: "[project]/components/Clients.jsx",
-                        lineNumber: 206,
+                        lineNumber: 200,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/Clients.jsx",
-                lineNumber: 188,
+                lineNumber: 182,
                 columnNumber: 7
             }, this),
             isModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -839,7 +832,7 @@ function Clients() {
                             children: editingClient ? 'Edit Client' : 'Add Client'
                         }, void 0, false, {
                             fileName: "[project]/components/Clients.jsx",
-                            lineNumber: 280,
+                            lineNumber: 274,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -849,7 +842,7 @@ function Clients() {
                                     children: "Name"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 289,
+                                    lineNumber: 283,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -862,13 +855,13 @@ function Clients() {
                                         })
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 293,
+                                    lineNumber: 287,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Clients.jsx",
-                            lineNumber: 287,
+                            lineNumber: 281,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -878,7 +871,7 @@ function Clients() {
                                     children: "Company"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 310,
+                                    lineNumber: 304,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -891,13 +884,13 @@ function Clients() {
                                         })
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 314,
+                                    lineNumber: 308,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Clients.jsx",
-                            lineNumber: 308,
+                            lineNumber: 302,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -907,7 +900,7 @@ function Clients() {
                                     children: "Email"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 331,
+                                    lineNumber: 325,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -920,13 +913,13 @@ function Clients() {
                                         })
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 335,
+                                    lineNumber: 329,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Clients.jsx",
-                            lineNumber: 329,
+                            lineNumber: 323,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -936,7 +929,7 @@ function Clients() {
                                     children: "Phone"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 352,
+                                    lineNumber: 346,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -949,13 +942,13 @@ function Clients() {
                                         })
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 356,
+                                    lineNumber: 350,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Clients.jsx",
-                            lineNumber: 350,
+                            lineNumber: 344,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -965,7 +958,7 @@ function Clients() {
                                     children: "Address"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 373,
+                                    lineNumber: 367,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -978,13 +971,13 @@ function Clients() {
                                         })
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 377,
+                                    lineNumber: 371,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Clients.jsx",
-                            lineNumber: 371,
+                            lineNumber: 365,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -994,7 +987,7 @@ function Clients() {
                                     children: "Notes"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 394,
+                                    lineNumber: 388,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1006,13 +999,13 @@ function Clients() {
                                         })
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 398,
+                                    lineNumber: 392,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Clients.jsx",
-                            lineNumber: 392,
+                            lineNumber: 386,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1024,7 +1017,7 @@ function Clients() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 414,
+                                    lineNumber: 408,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1033,30 +1026,30 @@ function Clients() {
                                     children: "Save Client"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Clients.jsx",
-                                    lineNumber: 423,
+                                    lineNumber: 417,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Clients.jsx",
-                            lineNumber: 412,
+                            lineNumber: 406,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Clients.jsx",
-                    lineNumber: 275,
+                    lineNumber: 269,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Clients.jsx",
-                lineNumber: 270,
+                lineNumber: 264,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Clients.jsx",
-        lineNumber: 166,
+        lineNumber: 160,
         columnNumber: 5
     }, this);
 }
@@ -1494,7 +1487,6 @@ function Projects({ isAdmin, searchTerm }) {
     const [employees, setEmployees] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    // Modal State
     const [isProjectModalOpen, setIsProjectModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingProject, setEditingProject] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [projectTitle, setProjectTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
@@ -1728,7 +1720,6 @@ function Projects({ isAdmin, searchTerm }) {
     };
     const term = searchTerm.trim().toLowerCase();
     const filteredProjects = projects.filter((p)=>projectMatchesSearch(p, term));
-    // Toggle employee selection
     const toggleMember = (employeeId)=>{
         setSelectedMembers((current)=>{
             if (current.includes(employeeId)) {
@@ -1752,20 +1743,20 @@ function Projects({ isAdmin, searchTerm }) {
                                 children: "Projects"
                             }, void 0, false, {
                                 fileName: "[project]/components/Projects.jsx",
-                                lineNumber: 357,
+                                lineNumber: 356,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Manage your projects, tasks, and team members."
                             }, void 0, false, {
                                 fileName: "[project]/components/Projects.jsx",
-                                lineNumber: 358,
+                                lineNumber: 357,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Projects.jsx",
-                        lineNumber: 356,
+                        lineNumber: 355,
                         columnNumber: 9
                     }, this),
                     isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1774,13 +1765,13 @@ function Projects({ isAdmin, searchTerm }) {
                         children: "+ New Project"
                     }, void 0, false, {
                         fileName: "[project]/components/Projects.jsx",
-                        lineNumber: 362,
+                        lineNumber: 361,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Projects.jsx",
-                lineNumber: 355,
+                lineNumber: 354,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1793,7 +1784,7 @@ function Projects({ isAdmin, searchTerm }) {
                     children: error
                 }, void 0, false, {
                     fileName: "[project]/components/Projects.jsx",
-                    lineNumber: 373,
+                    lineNumber: 372,
                     columnNumber: 11
                 }, this) : !filteredProjects.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     style: {
@@ -1811,7 +1802,7 @@ function Projects({ isAdmin, searchTerm }) {
                             children: term ? 'No matching projects or tasks.' : 'No projects yet.'
                         }, void 0, false, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 390,
+                            lineNumber: 389,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1821,13 +1812,13 @@ function Projects({ isAdmin, searchTerm }) {
                             children: term ? 'Try another search.' : isAdmin ? 'Click + New Project to create your first project board.' : 'You are not assigned to any active projects yet.'
                         }, void 0, false, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 401,
+                            lineNumber: 400,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Projects.jsx",
-                    lineNumber: 382,
+                    lineNumber: 381,
                     columnNumber: 11
                 }, this) : filteredProjects.map((project)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ProjectCard$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         project: project,
@@ -1842,12 +1833,12 @@ function Projects({ isAdmin, searchTerm }) {
                         onTaskStatusChange: handleTaskStatusChange
                     }, project._id, false, {
                         fileName: "[project]/components/Projects.jsx",
-                        lineNumber: 411,
+                        lineNumber: 410,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/Projects.jsx",
-                lineNumber: 371,
+                lineNumber: 370,
                 columnNumber: 7
             }, this),
             isProjectModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1861,7 +1852,7 @@ function Projects({ isAdmin, searchTerm }) {
                             children: editingProject ? 'Edit Project' : 'Create New Project'
                         }, void 0, false, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 438,
+                            lineNumber: 437,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1871,7 +1862,7 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Project Title"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 445,
+                                    lineNumber: 444,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1881,13 +1872,13 @@ function Projects({ isAdmin, searchTerm }) {
                                     onChange: (e)=>setProjectTitle(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 447,
+                                    lineNumber: 446,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 444,
+                            lineNumber: 443,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1897,7 +1888,7 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Description"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 458,
+                                    lineNumber: 457,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1906,13 +1897,13 @@ function Projects({ isAdmin, searchTerm }) {
                                     onChange: (e)=>setProjectDesc(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 460,
+                                    lineNumber: 459,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 457,
+                            lineNumber: 456,
                             columnNumber: 13
                         }, this),
                         isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1922,7 +1913,7 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Employees"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 471,
+                                    lineNumber: 470,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1939,7 +1930,7 @@ function Projects({ isAdmin, searchTerm }) {
                                                     children: isSelected ? '✓' : ''
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/Projects.jsx",
-                                                    lineNumber: 490,
+                                                    lineNumber: 489,
                                                     columnNumber: 27
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1951,13 +1942,13 @@ function Projects({ isAdmin, searchTerm }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/Projects.jsx",
-                                                    lineNumber: 494,
+                                                    lineNumber: 493,
                                                     columnNumber: 27
                                                 }, this)
                                             ]
                                         }, emp._id, true, {
                                             fileName: "[project]/components/Projects.jsx",
-                                            lineNumber: 480,
+                                            lineNumber: 479,
                                             columnNumber: 25
                                         }, this);
                                     }) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1965,12 +1956,12 @@ function Projects({ isAdmin, searchTerm }) {
                                         children: "No employees available"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Projects.jsx",
-                                        lineNumber: 501,
+                                        lineNumber: 500,
                                         columnNumber: 21
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 473,
+                                    lineNumber: 472,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1982,13 +1973,13 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: selectedMembers.length === 0 ? 'No employees selected' : `${selectedMembers.length} employee${selectedMembers.length === 1 ? '' : 's'} selected`
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 507,
+                                    lineNumber: 506,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 470,
+                            lineNumber: 469,
                             columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2000,7 +1991,7 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 524,
+                                    lineNumber: 523,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2009,24 +2000,24 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: editingProject ? 'Save Changes' : 'Create Project'
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 533,
+                                    lineNumber: 532,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 523,
+                            lineNumber: 522,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Projects.jsx",
-                    lineNumber: 434,
+                    lineNumber: 433,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Projects.jsx",
-                lineNumber: 430,
+                lineNumber: 429,
                 columnNumber: 9
             }, this),
             isTaskModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2040,7 +2031,7 @@ function Projects({ isAdmin, searchTerm }) {
                             children: "Add New Task"
                         }, void 0, false, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 556,
+                            lineNumber: 555,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2050,7 +2041,7 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Title"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 559,
+                                    lineNumber: 558,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2060,13 +2051,13 @@ function Projects({ isAdmin, searchTerm }) {
                                     onChange: (e)=>setTaskTitle(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 561,
+                                    lineNumber: 560,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 558,
+                            lineNumber: 557,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2076,7 +2067,7 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Description"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 572,
+                                    lineNumber: 571,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2085,13 +2076,13 @@ function Projects({ isAdmin, searchTerm }) {
                                     onChange: (e)=>setTaskDesc(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 574,
+                                    lineNumber: 573,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 571,
+                            lineNumber: 570,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2101,7 +2092,7 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Assign to"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 584,
+                                    lineNumber: 583,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -2113,7 +2104,7 @@ function Projects({ isAdmin, searchTerm }) {
                                             children: "Unassigned"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Projects.jsx",
-                                            lineNumber: 592,
+                                            lineNumber: 591,
                                             columnNumber: 17
                                         }, this),
                                         taskProjectMembers.map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2126,19 +2117,19 @@ function Projects({ isAdmin, searchTerm }) {
                                                 ]
                                             }, m._id, true, {
                                                 fileName: "[project]/components/Projects.jsx",
-                                                lineNumber: 595,
+                                                lineNumber: 594,
                                                 columnNumber: 19
                                             }, this))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 586,
+                                    lineNumber: 585,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 583,
+                            lineNumber: 582,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2150,7 +2141,7 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 603,
+                                    lineNumber: 602,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2159,30 +2150,30 @@ function Projects({ isAdmin, searchTerm }) {
                                     children: "Save Task"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Projects.jsx",
-                                    lineNumber: 612,
+                                    lineNumber: 611,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Projects.jsx",
-                            lineNumber: 602,
+                            lineNumber: 601,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Projects.jsx",
-                    lineNumber: 552,
+                    lineNumber: 551,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Projects.jsx",
-                lineNumber: 548,
+                lineNumber: 547,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Projects.jsx",
-        lineNumber: 354,
+        lineNumber: 353,
         columnNumber: 5
     }, this);
 }

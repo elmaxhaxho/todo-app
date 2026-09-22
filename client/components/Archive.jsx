@@ -93,10 +93,6 @@ export default function Archive({ isAdmin }) {
     }
   };
 
-
-  /*
-    Restore task
-  */
   const handleRestoreTask = async (id) => {
     try {
       const token = localStorage.getItem('token');

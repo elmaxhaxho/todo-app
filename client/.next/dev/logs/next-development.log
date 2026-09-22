@@ -92,3 +92,14 @@
 {"timestamp":"116:00:51.344","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
 {"timestamp":"116:02:51.887","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
 {"timestamp":"116:06:52.438","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"117:04:11.299","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"117:31:49.905","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"117:33:14.990","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"117:51:25.181","source":"Server","level":"LOG","message":"✓ Compiled in 209ms"}
+{"timestamp":"117:51:46.814","source":"Server","level":"LOG","message":"✓ Compiled in 56ms"}
+{"timestamp":"117:52:30.645","source":"Server","level":"LOG","message":"✓ Compiled in 70ms"}
+{"timestamp":"119:32:32.626","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"119:40:21.501","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"119:43:53.985","source":"Server","level":"LOG","message":"✓ Compiled in 218ms"}
+{"timestamp":"119:43:56.153","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"119:46:39.590","source":"Server","level":"LOG","message":"✓ Compiled in 28ms"}
