@@ -113,9 +113,7 @@ router.get(
     }
 );
 
-/*
- * GET ARCHIVED PROJECTS
- */
+
 router.get(
     '/archive',
     authMiddleware,
