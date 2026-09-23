@@ -1193,7 +1193,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 'use client';
 ;
-function Header({ username, searchTerm, setSearchTerm }) {
+function Header({ username, searchTerm, setSearchTerm, onProfileClick }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
         className: "header",
         children: [
@@ -1202,7 +1202,7 @@ function Header({ username, searchTerm, setSearchTerm }) {
                 children: "TODO"
             }, void 0, false, {
                 fileName: "[project]/components/Header.jsx",
-                lineNumber: 6,
+                lineNumber: 13,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1215,16 +1215,20 @@ function Header({ username, searchTerm, setSearchTerm }) {
                     onChange: (e)=>setSearchTerm?.(e.target.value)
                 }, void 0, false, {
                     fileName: "[project]/components/Header.jsx",
-                    lineNumber: 8,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Header.jsx",
-                lineNumber: 7,
+                lineNumber: 17,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "profile",
+                onClick: onProfileClick,
+                style: {
+                    cursor: 'pointer'
+                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "profile-picture",
@@ -1233,32 +1237,32 @@ function Header({ username, searchTerm, setSearchTerm }) {
                             alt: "Profile picture"
                         }, void 0, false, {
                             fileName: "[project]/components/Header.jsx",
-                            lineNumber: 18,
+                            lineNumber: 43,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/Header.jsx",
-                        lineNumber: 17,
+                        lineNumber: 41,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "username",
-                        children: username
+                        children: username || 'User'
                     }, void 0, false, {
                         fileName: "[project]/components/Header.jsx",
-                        lineNumber: 20,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Header.jsx",
-                lineNumber: 16,
+                lineNumber: 33,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Header.jsx",
-        lineNumber: 5,
+        lineNumber: 11,
         columnNumber: 5
     }, this);
 }
@@ -2599,8 +2603,10 @@ function Users({ currentUserId }) {
                     Authorization: `Bearer ${token}`
                 }
             });
-            if (!res.ok) throw new Error('Failed to fetch users');
             const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.message || 'Failed to fetch users');
+            }
             setUsers(data);
         } catch (err) {
             setError(err.message);
@@ -2630,7 +2636,10 @@ function Users({ currentUserId }) {
                     role
                 })
             });
-            if (!res.ok) throw new Error('Failed to create user');
+            const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.message || 'Failed to create user');
+            }
             setIsModalOpen(false);
             setName('');
             setEmail('');
@@ -2654,7 +2663,10 @@ function Users({ currentUserId }) {
                     role: newRole
                 })
             });
-            if (!res.ok) throw new Error('Failed to change role');
+            const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.message || 'Failed to change role');
+            }
             fetchUsers();
         } catch (err) {
             alert(err.message);
@@ -2662,15 +2674,21 @@ function Users({ currentUserId }) {
         }
     };
     const handleDeleteUser = async (id)=>{
-        if (!confirm('Are you sure you want to delete this user? They will be removed from projects and task assignments.')) return;
+        if (!confirm('Are you sure you want to delete this user? They will be removed from projects and task assignments.')) {
+            return;
+        }
         try {
             const token = localStorage.getItem('token');
-            await fetch(`${("TURBOPACK compile-time value", "http://localhost:5000") || ''}/api/users/${id}`, {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5000") || ''}/api/users/${id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
+            const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.message || 'Failed to delete user');
+            }
             fetchUsers();
         } catch (err) {
             alert(err.message);
@@ -2688,20 +2706,20 @@ function Users({ currentUserId }) {
                                 children: "Users"
                             }, void 0, false, {
                                 fileName: "[project]/components/Users.jsx",
-                                lineNumber: 112,
+                                lineNumber: 254,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Create users and manage their roles."
                             }, void 0, false, {
                                 fileName: "[project]/components/Users.jsx",
-                                lineNumber: 113,
+                                lineNumber: 258,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Users.jsx",
-                        lineNumber: 111,
+                        lineNumber: 252,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2710,13 +2728,13 @@ function Users({ currentUserId }) {
                         children: "+ Add User"
                     }, void 0, false, {
                         fileName: "[project]/components/Users.jsx",
-                        lineNumber: 115,
+                        lineNumber: 264,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Users.jsx",
-                lineNumber: 110,
+                lineNumber: 250,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2728,7 +2746,7 @@ function Users({ currentUserId }) {
                     children: error
                 }, void 0, false, {
                     fileName: "[project]/components/Users.jsx",
-                    lineNumber: 122,
+                    lineNumber: 279,
                     columnNumber: 11
                 }, this) : !users.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     style: {
@@ -2737,7 +2755,7 @@ function Users({ currentUserId }) {
                     children: "No users yet."
                 }, void 0, false, {
                     fileName: "[project]/components/Users.jsx",
-                    lineNumber: 124,
+                    lineNumber: 289,
                     columnNumber: 11
                 }, this) : users.map((user)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "admin-card",
@@ -2748,20 +2766,20 @@ function Users({ currentUserId }) {
                                         children: user.name
                                     }, void 0, false, {
                                         fileName: "[project]/components/Users.jsx",
-                                        lineNumber: 129,
+                                        lineNumber: 308,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: user.email
                                     }, void 0, false, {
                                         fileName: "[project]/components/Users.jsx",
-                                        lineNumber: 130,
+                                        lineNumber: 312,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Users.jsx",
-                                lineNumber: 128,
+                                lineNumber: 306,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2777,7 +2795,7 @@ function Users({ currentUserId }) {
                                                 children: "Employee"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Users.jsx",
-                                                lineNumber: 138,
+                                                lineNumber: 334,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2785,13 +2803,13 @@ function Users({ currentUserId }) {
                                                 children: "Admin"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Users.jsx",
-                                                lineNumber: 139,
+                                                lineNumber: 338,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Users.jsx",
-                                        lineNumber: 133,
+                                        lineNumber: 320,
                                         columnNumber: 17
                                     }, this),
                                     user._id !== currentUserId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2800,24 +2818,24 @@ function Users({ currentUserId }) {
                                         children: "Delete"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Users.jsx",
-                                        lineNumber: 142,
+                                        lineNumber: 347,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Users.jsx",
-                                lineNumber: 132,
+                                lineNumber: 318,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, user._id, true, {
                         fileName: "[project]/components/Users.jsx",
-                        lineNumber: 127,
+                        lineNumber: 301,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/Users.jsx",
-                lineNumber: 120,
+                lineNumber: 275,
                 columnNumber: 7
             }, this),
             isModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2831,7 +2849,7 @@ function Users({ currentUserId }) {
                             children: "Create User"
                         }, void 0, false, {
                             fileName: "[project]/components/Users.jsx",
-                            lineNumber: 158,
+                            lineNumber: 382,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2841,7 +2859,7 @@ function Users({ currentUserId }) {
                                     children: "Name"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 160,
+                                    lineNumber: 388,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2851,13 +2869,13 @@ function Users({ currentUserId }) {
                                     onChange: (e)=>setName(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 161,
+                                    lineNumber: 392,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Users.jsx",
-                            lineNumber: 159,
+                            lineNumber: 386,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2867,7 +2885,7 @@ function Users({ currentUserId }) {
                                     children: "Email"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 169,
+                                    lineNumber: 405,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2877,13 +2895,13 @@ function Users({ currentUserId }) {
                                     onChange: (e)=>setEmail(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 170,
+                                    lineNumber: 409,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Users.jsx",
-                            lineNumber: 168,
+                            lineNumber: 403,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2893,7 +2911,7 @@ function Users({ currentUserId }) {
                                     children: "Password"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 178,
+                                    lineNumber: 422,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2903,13 +2921,13 @@ function Users({ currentUserId }) {
                                     onChange: (e)=>setPassword(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 179,
+                                    lineNumber: 426,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Users.jsx",
-                            lineNumber: 177,
+                            lineNumber: 420,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2919,7 +2937,7 @@ function Users({ currentUserId }) {
                                     children: "Role"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 187,
+                                    lineNumber: 441,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -2931,7 +2949,7 @@ function Users({ currentUserId }) {
                                             children: "Employee"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Users.jsx",
-                                            lineNumber: 189,
+                                            lineNumber: 454,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2939,19 +2957,19 @@ function Users({ currentUserId }) {
                                             children: "Admin"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Users.jsx",
-                                            lineNumber: 190,
+                                            lineNumber: 458,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 188,
+                                    lineNumber: 445,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Users.jsx",
-                            lineNumber: 186,
+                            lineNumber: 439,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2963,7 +2981,7 @@ function Users({ currentUserId }) {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 194,
+                                    lineNumber: 468,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2972,30 +2990,30 @@ function Users({ currentUserId }) {
                                     children: "Create User"
                                 }, void 0, false, {
                                     fileName: "[project]/components/Users.jsx",
-                                    lineNumber: 197,
+                                    lineNumber: 477,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/Users.jsx",
-                            lineNumber: 193,
+                            lineNumber: 466,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/Users.jsx",
-                    lineNumber: 157,
+                    lineNumber: 375,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Users.jsx",
-                lineNumber: 156,
+                lineNumber: 368,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Users.jsx",
-        lineNumber: 109,
+        lineNumber: 248,
         columnNumber: 5
     }, this);
 }

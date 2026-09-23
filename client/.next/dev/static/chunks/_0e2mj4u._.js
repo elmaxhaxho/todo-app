@@ -106,7 +106,7 @@ function SignupForm() {
                     children: "TODO"
                 }, void 0, false, {
                     fileName: "[project]/components/SignupForm.jsx",
-                    lineNumber: 81,
+                    lineNumber: 153,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -118,7 +118,7 @@ function SignupForm() {
                     children: "Create your account"
                 }, void 0, false, {
                     fileName: "[project]/components/SignupForm.jsx",
-                    lineNumber: 94,
+                    lineNumber: 167,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -128,10 +128,10 @@ function SignupForm() {
                         color: '#858595',
                         marginBottom: '28px'
                     },
-                    children: "Sign up to start organizing your tasks"
+                    children: "Create your own workspace and start organizing your tasks"
                 }, void 0, false, {
                     fileName: "[project]/components/SignupForm.jsx",
-                    lineNumber: 97,
+                    lineNumber: 177,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -149,7 +149,7 @@ function SignupForm() {
                                     children: "Name"
                                 }, void 0, false, {
                                     fileName: "[project]/components/SignupForm.jsx",
-                                    lineNumber: 103,
+                                    lineNumber: 198,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -161,13 +161,13 @@ function SignupForm() {
                                     onChange: (e)=>setName(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/SignupForm.jsx",
-                                    lineNumber: 104,
+                                    lineNumber: 202,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/SignupForm.jsx",
-                            lineNumber: 102,
+                            lineNumber: 196,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -178,7 +178,7 @@ function SignupForm() {
                                     children: "Email"
                                 }, void 0, false, {
                                     fileName: "[project]/components/SignupForm.jsx",
-                                    lineNumber: 115,
+                                    lineNumber: 217,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -190,13 +190,13 @@ function SignupForm() {
                                     onChange: (e)=>setEmail(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/SignupForm.jsx",
-                                    lineNumber: 116,
+                                    lineNumber: 221,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/SignupForm.jsx",
-                            lineNumber: 114,
+                            lineNumber: 215,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -207,7 +207,7 @@ function SignupForm() {
                                     children: "Password"
                                 }, void 0, false, {
                                     fileName: "[project]/components/SignupForm.jsx",
-                                    lineNumber: 127,
+                                    lineNumber: 236,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -219,13 +219,13 @@ function SignupForm() {
                                     onChange: (e)=>setPassword(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/SignupForm.jsx",
-                                    lineNumber: 128,
+                                    lineNumber: 240,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/SignupForm.jsx",
-                            lineNumber: 126,
+                            lineNumber: 234,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -236,7 +236,7 @@ function SignupForm() {
                                     children: "Confirm Password"
                                 }, void 0, false, {
                                     fileName: "[project]/components/SignupForm.jsx",
-                                    lineNumber: 139,
+                                    lineNumber: 255,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -248,13 +248,13 @@ function SignupForm() {
                                     onChange: (e)=>setConfirmPassword(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/components/SignupForm.jsx",
-                                    lineNumber: 140,
+                                    lineNumber: 259,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/SignupForm.jsx",
-                            lineNumber: 138,
+                            lineNumber: 253,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -274,16 +274,16 @@ function SignupForm() {
                                 fontWeight: 600,
                                 cursor: 'pointer'
                             },
-                            children: "Create account?"
+                            children: disabled ? 'Creating...' : 'Create account'
                         }, void 0, false, {
                             fileName: "[project]/components/SignupForm.jsx",
-                            lineNumber: 150,
+                            lineNumber: 274,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/SignupForm.jsx",
-                    lineNumber: 101,
+                    lineNumber: 188,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -306,24 +306,24 @@ function SignupForm() {
                             children: "Log in"
                         }, void 0, false, {
                             fileName: "[project]/components/SignupForm.jsx",
-                            lineNumber: 174,
+                            lineNumber: 309,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/SignupForm.jsx",
-                    lineNumber: 172,
+                    lineNumber: 299,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/SignupForm.jsx",
-            lineNumber: 80,
+            lineNumber: 145,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/SignupForm.jsx",
-        lineNumber: 69,
+        lineNumber: 133,
         columnNumber: 5
     }, this);
 }

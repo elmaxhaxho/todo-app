@@ -129,7 +129,7 @@ export default function LoginForm() {
         </form>
 
         <p className="signup-text" style={{ marginTop: '25px', fontSize: '13px', color: '#858595' }}>
-          Don't have an account?{' '}
+          Create your own workspace -{' '}
           <Link href="/signup" style={{ color: '#7E5AFE', fontWeight: 600, textDecoration: 'none' }}>
             Sign up
           </Link>
